@@ -1,0 +1,9 @@
+.vscode/
+bootstrap/
+config/
+modules/
+storage/
+vendor/
+artisan/
+index.php
+server.php

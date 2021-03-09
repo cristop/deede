@@ -1,0 +1,39 @@
+description = "Header"
+==
+{# [session]
+security = "all"
+== #}
+<link rel="stylesheet" href="{{ 'assets/css/header.css'|theme }}" async>
+
+<!-- Header -->
+<header id="navHeader">
+	<div class="container">
+		<button class="responsiveMenu">
+			<div></div>
+			<div></div>
+			<div></div>
+		</button>
+		<nav class="menu-main">
+			<a href="#">Menu 1</a>
+			<a href="#">Menu 2</a>
+			<a href="#">Menu 3</a>
+			<a href="{{ 'login'|page }}" class="iniciar-sesion">
+                {% if user %}
+                    Mi cuenta
+                {% else %}
+                    Iniciar sesión
+                {% endif %}
+            </a>
+		</nav>
+		<a href="https://{{ Multitheme.mainDomain.domain }}" class="logo js-scroll">
+			<img src="{{ 'assets/img/logo.svg'|theme }}" alt="" class="full-logo" />
+		</a>
+		{% if user %}
+			<a href="{{ 'session/perfil'|page }}" class="on-sesion c-primary">
+				<!-- <img src="{{ 'assets/img/icons/user.svg'|theme }}" width="30" /> -->
+				<img src="{{ user.getAvatarThumb(82) }}" alt="{{ user.name }} {{ user.surname }}" width="30" />
+				{{ user.person.company }}
+			</a>
+		{% endif %}
+	</div>
+</header>

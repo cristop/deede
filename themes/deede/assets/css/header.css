@@ -4,7 +4,7 @@
 header{
   display: block;
   text-align: center;
-  background-color: transparent;
+  background-color: var(--c-secondary);
   padding-top: 10px;
   padding-bottom: 10px;
   position: absolute;
@@ -19,13 +19,14 @@ header{
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  min-height: 71px;
 }
 header.sticky {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #fff;
-  border-bottom: 1px solid #E6EAEA;
+  /* background-color: #fff; */
+  /* border-bottom: 1px solid #E6EAEA; */
   visibility: visible !important;
 }
 header.sticky.headerInternal{
@@ -45,12 +46,6 @@ header .container-fluid{
 header nav.menu-main{
   float: right;
 }
-/*Mobile*/
-@media screen and (min-width:900px){
-  header nav.menu-main{
-    padding-right: 80px;
-  }
-}
 @media screen and (max-width:900px){
   .headerInternal{
     display: none !important;
@@ -61,12 +56,14 @@ header nav.menu-right{
 }
 header .logo{
   float: left;
+  /* padding-top: 10px; */
+  display: block;
 }
 header nav a{
   padding-top: 20px;
   padding-bottom: 20px;
   line-height: 50px;
-  color: #666666;
+  color: #e0e0e0;
   padding-left: 20px;
   padding-right: 20px;
   font-size: 0.75rem;
@@ -75,13 +72,11 @@ header nav a{
 header nav a:first-child{
   padding-left: 0;
 }
-header nav a:last-child{
-  padding-right: 0;
-}
+
 header nav a:hover,
 header nav a.active
 {
-  color: var(--c-primary);
+  color: #fff;
 }
 header nav a.big-number{
   font-size: 1.3rem;
@@ -97,6 +92,9 @@ header .logo img{
   -o-transition: all 0.27s ease;
   transition: all 0.27s ease;
   max-width: 100%;
+  vertical-align: middle;
+  position: absolute;
+  top: -14px;
 }
 /*Mobile*/
 @media screen and (max-width:550px){
@@ -120,9 +118,15 @@ header .logo-center{
 }
 
 .iniciar-sesion{
-  color: var(--c-primary);
+  color: var(--c-terciary);
+  border: 1px solid var(--c-terciary);
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
-
+.iniciar-sesion:hover{
+  color: #fff;
+  border-color: #fff
+}
 
 /*Mobile*/
 @media screen and (max-width:800px){
@@ -189,9 +193,8 @@ header .logo-center{
     background-color: transparent;
     border: 0;
     width: 35px;
-    top: calc(50% + -8px);
+    top: calc(50% + -2px);
     transform: translateY(-50%);
-
     -webkit-transition: all 0.0s ease;
     -moz-transition: all 0.0s ease;
     -ms-transition: all 0.0s ease;

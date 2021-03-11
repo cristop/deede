@@ -10,14 +10,130 @@ robot_follow = "follow"
 <link rel="stylesheet" href="{{ 'assets/css/partials/busqueda.css'|theme }}" async>
 {% endput %}
 
-<div class="resultados">
+<div class="resultados-header">
     <div class="container">
         <h1>1.123 casas y pisos en alquiler en Malasaña-Universidad, Madrid</h1>
         <div class="buttons">
-            <a href="#">Comprar</a>
-            <a href="#">Alquilar</a>
-            <a href="#">Compartir</a>
+            <a href="#" class="active">Alquilar</a>
+            <a href="#">Comprar</a>            
         </div>
     </div>
 </div>
 
+<div class="resultados">
+    <div class="container">
+        <div class="filtro">
+            <b>Tipo de inmueble</b>
+            <select name="" id="">
+				<option value="Obra nueva">Obra nueva</option>
+				<option value="Viviendas">Viviendas</option>
+				<option value="Habitación">Habitación</option>
+				<option value="Garajes">Garajes</option>
+				<option value="Trasteros">Trasteros</option>
+				<option value="Oficinas">Oficinas</option>
+				<option value="Locales o naves">Locales o naves</option>
+				<option value="Terrenos">Terrenos</option>
+				<option value="Edificios">Edificios</option>
+			</select>
+
+            <br><br>
+            <b>Precio</b>
+            <select name="" id="">
+				<option value="Mín">Mín</option>
+            </select>
+            <select name="" id="">
+				<option value="Max">Max</option>
+            </select>
+
+            <br><br>
+            <b>Tamaño</b> 
+            <select name="" id="">
+				<option value="Mín">Mín</option>
+            </select>
+            <select name="" id="">
+				<option value="Max">Max</option>
+            </select>
+
+            <br><br>
+            <b>Tipo de vivienda</b> 
+            <label><input type="checkbox"> Pisos</label>
+            <label><input type="checkbox"> Casas o chalets</label>
+            <label><input type="checkbox"> Casas rústicas</label>
+            <label><input type="checkbox"> Dúplex</label>
+            <label><input type="checkbox"> Áticos</label>
+
+            <br><br>
+            <b>Habitaciones</b>
+            <label><input type="checkbox"> 0 habitaciones (estudio)</label>
+            <label><input type="checkbox"> 1</label>
+            <label><input type="checkbox"> 2</label>
+            <label><input type="checkbox"> 3</label>
+            <label><input type="checkbox"> 4 habitaciones o más</label>
+        </div>
+        <div class="listado">
+            <div class="listado-header">
+                Ordenar:
+                <a href="#" class="active">Relevancia</a>
+                <a href="#">Baratos</a>
+                <a href="#">Recientes</a>
+            </div>
+            <div class="depto">
+                <div class="imagen">
+                    <img src="{{ 'assets/img/ejemplos/01.jpg'|theme }}" alt="">
+                </div>
+                <div class="desc">
+                    <div class="logo-empresa">
+                        <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
+                    </div>
+                    <div class="title">Piso en calle del Espíritu Santo, 6, Malasaña-Universidad, Madrid</div>
+                    <div class="precio"><b>700</b> €/mes <span class="descuento">800 €</span></div>
+                    <div class="detalle">1 hab. 65 m² Bajo interior sin ascensor</div>
+                    <div class="texto">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt non impedit sit tenetur doloribus! Adipisci, temporibus eaque molestias consectetur minima veniam corporis perspiciatis, voluptates assumenda ut facere impedit rem magnam.
+                    </div>
+                    <div class="contacto">
+                        <a href="#" class="tel">913 669 865</a>
+                    </div>
+                </div>
+            </div>
+            <div class="depto">
+                <div class="imagen">
+                    <img src="{{ 'assets/img/ejemplos/01.jpg'|theme }}" alt="">
+                </div>
+                <div class="desc">
+                    <div class="logo-empresa">
+                        <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
+                    </div>
+                    <div class="title">Piso en calle del Espíritu Santo, 6, Malasaña-Universidad, Madrid</div>
+                    <div class="precio"><b>700</b> €/mes <span class="descuento">800 €</span></div>
+                    <div class="detalle">1 hab. 65 m² Bajo interior sin ascensor</div>
+                    <div class="texto">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt non impedit sit tenetur doloribus! Adipisci, temporibus eaque molestias consectetur minima veniam corporis perspiciatis, voluptates assumenda ut facere impedit rem magnam.
+                    </div>
+                    <div class="contacto">
+                        <a href="#" class="tel">913 669 865</a>
+                    </div>
+                </div>
+            </div>
+            <div class="depto">
+                <div class="imagen">
+                    <img src="{{ 'assets/img/ejemplos/01.jpg'|theme }}" alt="">
+                </div>
+                <div class="desc">
+                    <div class="logo-empresa">
+                        <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
+                    </div>
+                    <div class="title">Piso en calle del Espíritu Santo, 6, Malasaña-Universidad, Madrid</div>
+                    <div class="precio"><b>700</b> €/mes <span class="descuento">800 €</span></div>
+                    <div class="detalle">1 hab. 65 m² Bajo interior sin ascensor</div>
+                    <div class="texto">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt non impedit sit tenetur doloribus! Adipisci, temporibus eaque molestias consectetur minima veniam corporis perspiciatis, voluptates assumenda ut facere impedit rem magnam.
+                    </div>
+                    <div class="contacto">
+                        <a href="#" class="tel">913 669 865</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

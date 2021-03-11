@@ -24,12 +24,10 @@ robot_follow = "follow"
 				<br>
 				<form action="">
 					<div class="buttons">
-						<input type="radio" name="categoria" id="comprar" />						
-						<label for="comprar">Comprar</label>
 						<input type="radio" name="categoria" id="alquilar" checked />
 						<label for="alquilar">Alquilar</label>
-						<input type="radio" name="categoria" id="compartir" />
-						<label for="compartir">Compartir</label>
+						<input type="radio" name="categoria" id="comprar" />						
+						<label for="comprar">Comprar</label>
 					</div>
 
 					<select name="" id="">
@@ -48,7 +46,7 @@ robot_follow = "follow"
 						<input type="text" id="buscar" name="buscar" placeholder="Escribe donde buscas" />
 					</div>
 
-					<a href="{{ 'prestamo/solicitud'|page }}" target="_blank" class="btn btn-primary">BUSCAR</a>
+					<a href="{{ 'busqueda'|page }}" class="btn btn-primary">BUSCAR</a>
 				</form>
 			</div>
 		</div>
@@ -74,8 +72,8 @@ robot_follow = "follow"
 			<div class="tabs">
 				<div class="first">
 					<ul>
-						<li><a href="#">Comprar</a></li>
 						<li><a href="#" class="active">Alquilar</a></li>
+						<li><a href="#">Comprar</a></li>
 					</ul>
 				</div>
 				<div class="second">
@@ -92,7 +90,7 @@ robot_follow = "follow"
 						<li><a href="#">Edificios</a></li>
 					</ul>
 				</div>
-				<div class="third">
+				{# <div class="third">
 					<ul>
 						<li><a href="#" class="active">Pisos</a></li>
 						<li><a href="#">Casas o chalets</a></li>
@@ -101,38 +99,38 @@ robot_follow = "follow"
 						<li><a href="#">Áticos</a></li>
 						<li><a href="#">Estudios</a></li>
 					</ul>
-				</div>
+				</div> #}
 			</div>
 			<div class="contents">
 				<div data-first="alquiler" data-second="viviendas" data-third="Pisos">
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
-					<div class="item">16.290 <a href="#">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
+					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
 				</div>
 			</div>
 		</div>

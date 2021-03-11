@@ -58,6 +58,7 @@ header .logo{
   float: left;
   /* padding-top: 10px; */
   display: block;
+  margin-left: -23px;
 }
 header nav a{
   padding-top: 20px;
@@ -203,7 +204,7 @@ header .logo-center{
   }
   .responsiveMenu > div{
     height: 4px;
-    background-color: black;
+    background-color: white;
     margin: 3px 0;
     -webkit-border-radius: 3px;
     border-radius: 3px;

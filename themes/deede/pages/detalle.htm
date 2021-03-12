@@ -1,0 +1,113 @@
+title = "Detalle"
+url = "/detalle"
+layout = "default"
+meta_title = ""
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+{% put scripts %}
+<script type="text/javascript" src="{{ 'assets/library/jquery.cycle2/jquery.cycle2.min.js'|theme }}"></script>
+{% endput %}
+{% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/partials/detalle.css'|theme }}" async>
+{% endput %}
+
+<section class="top">
+    <div class="container">
+        <a href="{{ 'busqueda'|page }}" class="volver">Volver a resultados</a>
+    </div>
+</section>
+
+<section class="detalle-section">
+    <div class="container">
+        <div class="col">
+            <div class="white-bg">
+                <div class="galeria">
+                    <div class="cycle-slideshow"
+                    data-cycle-fx="scrollHorz"
+                    data-cycle-timeout="0">
+                        <div class="cycle-prev"></div>
+                        <div class="cycle-next"></div>
+                        <img src="{{ 'assets/img/ejemplos/01.jpg'|theme }}" alt="">
+                        <img src="{{ 'assets/img/ejemplos/02.jpg'|theme }}" alt="">
+                        <img src="{{ 'assets/img/ejemplos/03.jpg'|theme }}" alt="">
+                        <img src="{{ 'assets/img/ejemplos/04.jpg'|theme }}" alt="">
+                        <img src="{{ 'assets/img/ejemplos/05.jpg'|theme }}" alt="">
+                        <img src="{{ 'assets/img/ejemplos/06.jpg'|theme }}" alt="">
+                        <img src="{{ 'assets/img/ejemplos/07.jpg'|theme }}" alt="">
+                        <img src="{{ 'assets/img/ejemplos/08.jpg'|theme }}" alt="">
+                        <img src="{{ 'assets/img/ejemplos/09.jpg'|theme }}" alt="">
+                        <img src="{{ 'assets/img/ejemplos/10.jpg'|theme }}" alt="">
+                    </div>
+                </div>
+                <h1 class="title">Piso en calle del Espíritu Santo, 6, Malasaña-Universidad, Madrid</h1>
+                <div class="precio"><b>700</b> €/mes <span class="descuento">800 €</span></div>
+                <div class="sep"></div>
+                <b>Comentario del anunciante</b> <br>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis debitis nesciunt temporibus tempora, praesentium deserunt quae sapiente ullam quasi voluptate iste optio possimus, ad odio quas dolor harum nihil consequuntur.
+                <div class="sep"></div>
+                <div class="flex caracteristicas">
+                    <div>
+                        <b>Características básicas</b>
+                        <ul>
+                            <li>21 m² construidos</li>
+                            <li>Sin habitación</li>
+                            <li>1 baño</li>
+                            <li>Segunda mano/buen estado</li>
+                            <li>Orientación este</li>
+                            <li>Construido en 1943</li>
+                            <li>Amueblado y cocina equipada</li>
+                            <li>Calefacción central</li>
+                            <li>Certificación energética: en trámite</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b>Edificio</b>
+                        <ul>
+                            <li>Planta 8ª exterior</li>
+                            <li>con ascensor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="white-bg">
+                <b>Ubicación en Google Maps</b>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194347.38440735618!2d-3.8196211943268215!3d40.438131080750914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2zTWFkcmlkLCBFc3Bhw7Fh!5e0!3m2!1ses-419!2sus!4v1615578811594!5m2!1ses-419!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="col">
+            <div class="white-bg">
+                <form action="">
+                    <b>Contacta al anunciante</b>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Hola, me interesa este piso y me gustaría hacer una visita. Un saludo"></textarea>
+                    <label>Tu email</label>
+                    <input type="email" required>
+                    <label>Tu telefono</label>
+                    <input type="tel" required>
+                    <label>Tu nombre</label>
+                    <input type="text" required>
+                    <button type="submit">Contactar</button>
+                </form>
+                <a href="#" class="tel">918 003 293</a>
+                <div class="sep"></div>
+                Profesional <br>
+                Real State
+                <div class="logo-empresa">
+                    <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="similares">
+    <div class="container">
+        <h2 class="title">Otros anuncios similares a este</h2>
+        <div class="similares-container">
+            {% partial 'dynamic/depto.htm' %}
+            {% partial 'dynamic/depto.htm' %}
+            {% partial 'dynamic/depto.htm' %}
+        </div>
+    </div>
+</section>

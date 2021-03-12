@@ -9,6 +9,9 @@ robot_follow = "follow"
 {% put styles %}
 <link rel="stylesheet" href="{{ 'assets/css/partials/busqueda.css'|theme }}" async>
 {% endput %}
+{% put scripts %}
+<script type="text/javascript" src="{{ 'assets/library/jquery.cycle2/jquery.cycle2.min.js'|theme }}"></script>
+{% endput %}
 
 <div class="resultados-header">
     <div class="container">
@@ -22,53 +25,48 @@ robot_follow = "follow"
 
 <div class="resultados">
     <div class="container">
-        <div class="filtro">
-            <b>Tipo de inmueble</b>
-            <select name="" id="">
-				<option value="Obra nueva">Obra nueva</option>
-				<option value="Viviendas">Viviendas</option>
-				<option value="Habitación">Habitación</option>
-				<option value="Garajes">Garajes</option>
-				<option value="Trasteros">Trasteros</option>
-				<option value="Oficinas">Oficinas</option>
-				<option value="Locales o naves">Locales o naves</option>
-				<option value="Terrenos">Terrenos</option>
-				<option value="Edificios">Edificios</option>
-			</select>
+        <div>
+            <div class="filtro">
+                <b>Tipo de inmueble</b>
+                <select name="" id="">
+                    <option value="Obra nueva">Obra nueva</option>
+                    <option value="Viviendas">Viviendas</option>
+                    <option value="Habitación">Habitación</option>
+                    <option value="Garajes">Garajes</option>
+                    <option value="Trasteros">Trasteros</option>
+                    <option value="Oficinas">Oficinas</option>
+                    <option value="Locales o naves">Locales o naves</option>
+                    <option value="Terrenos">Terrenos</option>
+                    <option value="Edificios">Edificios</option>
+                </select>
 
-            <br><br>
-            <b>Precio</b>
-            <select name="" id="">
-				<option value="Mín">Mín</option>
-            </select>
-            <select name="" id="">
-				<option value="Max">Max</option>
-            </select>
+                <br><br>
+                <b>Precio</b>
+                <div style="display: flex">
+                    <select name="" id="">
+                        <option value="Mín">Mín</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="Max">Max</option>
+                    </select>
+                </div>
 
-            <br><br>
-            <b>Tamaño</b> 
-            <select name="" id="">
-				<option value="Mín">Mín</option>
-            </select>
-            <select name="" id="">
-				<option value="Max">Max</option>
-            </select>
+                <br><br>
+                <b>Tipo de vivienda</b> 
+                <label><input type="checkbox"> Pisos</label>
+                <label><input type="checkbox"> Casas o chalets</label>
+                <label><input type="checkbox"> Casas rústicas</label>
+                <label><input type="checkbox"> Dúplex</label>
+                <label><input type="checkbox"> Áticos</label>
 
-            <br><br>
-            <b>Tipo de vivienda</b> 
-            <label><input type="checkbox"> Pisos</label>
-            <label><input type="checkbox"> Casas o chalets</label>
-            <label><input type="checkbox"> Casas rústicas</label>
-            <label><input type="checkbox"> Dúplex</label>
-            <label><input type="checkbox"> Áticos</label>
-
-            <br><br>
-            <b>Habitaciones</b>
-            <label><input type="checkbox"> 0 habitaciones (estudio)</label>
-            <label><input type="checkbox"> 1</label>
-            <label><input type="checkbox"> 2</label>
-            <label><input type="checkbox"> 3</label>
-            <label><input type="checkbox"> 4 habitaciones o más</label>
+                <br><br>
+                <b>Habitaciones</b>
+                <label><input type="checkbox"> 0 habitaciones (estudio)</label>
+                <label><input type="checkbox"> 1</label>
+                <label><input type="checkbox"> 2</label>
+                <label><input type="checkbox"> 3</label>
+                <label><input type="checkbox"> 4 habitaciones o más</label>
+            </div>
         </div>
         <div class="listado">
             <div class="listado-header">
@@ -77,62 +75,24 @@ robot_follow = "follow"
                 <a href="#">Baratos</a>
                 <a href="#">Recientes</a>
             </div>
-            <div class="depto">
-                <div class="imagen">
-                    <img src="{{ 'assets/img/ejemplos/01.jpg'|theme }}" alt="">
-                </div>
-                <div class="desc">
-                    <div class="logo-empresa">
-                        <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
-                    </div>
-                    <div class="title">Piso en calle del Espíritu Santo, 6, Malasaña-Universidad, Madrid</div>
-                    <div class="precio"><b>700</b> €/mes <span class="descuento">800 €</span></div>
-                    <div class="detalle">1 hab. 65 m² Bajo interior sin ascensor</div>
-                    <div class="texto">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt non impedit sit tenetur doloribus! Adipisci, temporibus eaque molestias consectetur minima veniam corporis perspiciatis, voluptates assumenda ut facere impedit rem magnam.
-                    </div>
-                    <div class="contacto">
-                        <a href="#" class="tel">913 669 865</a>
-                    </div>
-                </div>
+            <div>
+                {% partial 'dynamic/depto.htm' %}
+                {% partial 'dynamic/depto.htm' %}
+                {% partial 'dynamic/depto.htm' %}                
             </div>
-            <div class="depto">
-                <div class="imagen">
-                    <img src="{{ 'assets/img/ejemplos/01.jpg'|theme }}" alt="">
-                </div>
-                <div class="desc">
-                    <div class="logo-empresa">
-                        <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
-                    </div>
-                    <div class="title">Piso en calle del Espíritu Santo, 6, Malasaña-Universidad, Madrid</div>
-                    <div class="precio"><b>700</b> €/mes <span class="descuento">800 €</span></div>
-                    <div class="detalle">1 hab. 65 m² Bajo interior sin ascensor</div>
-                    <div class="texto">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt non impedit sit tenetur doloribus! Adipisci, temporibus eaque molestias consectetur minima veniam corporis perspiciatis, voluptates assumenda ut facere impedit rem magnam.
-                    </div>
-                    <div class="contacto">
-                        <a href="#" class="tel">913 669 865</a>
-                    </div>
-                </div>
-            </div>
-            <div class="depto">
-                <div class="imagen">
-                    <img src="{{ 'assets/img/ejemplos/01.jpg'|theme }}" alt="">
-                </div>
-                <div class="desc">
-                    <div class="logo-empresa">
-                        <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
-                    </div>
-                    <div class="title">Piso en calle del Espíritu Santo, 6, Malasaña-Universidad, Madrid</div>
-                    <div class="precio"><b>700</b> €/mes <span class="descuento">800 €</span></div>
-                    <div class="detalle">1 hab. 65 m² Bajo interior sin ascensor</div>
-                    <div class="texto">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt non impedit sit tenetur doloribus! Adipisci, temporibus eaque molestias consectetur minima veniam corporis perspiciatis, voluptates assumenda ut facere impedit rem magnam.
-                    </div>
-                    <div class="contacto">
-                        <a href="#" class="tel">913 669 865</a>
-                    </div>
-                </div>
+            <div>
+                <ul class="pagination">
+                    <li>
+                        <a href="#" class="prev"></a>
+                    </li>
+                    <li><a href="#" class="active">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li>
+                        <a href="#" class="next"></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		.cycle-slideshow{
+			width: 50%;
+		}
+		.cycle-slideshow img{
+			max-width: 100%;
+		}
+	</style>
+	<div class="cycle-slideshow"
+		data-cycle-fx="scrollHorz"
+    	data-cycle-timeout="0"
+		data-cycle-next="#arrow1 .next"
+		data-cycle-prev="#arrow1 .prev">
+		<!-- data-cycle-slides="> div" -->
+	    <img src="http://malsup.github.io/images/p1.jpg">
+	    <img src="http://malsup.github.io/images/p2.jpg">
+	    <img src="http://malsup.github.io/images/p3.jpg">
+	    <img src="http://malsup.github.io/images/p4.jpg">
+
+	    <div class="cycle-pager"></div>
+	</div>
+
+	<a href="http://jquery.malsup.com/cycle2/demo/">http://jquery.malsup.com/cycle2/demo/</a>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="jquery.cycle2.min.js"></script>
+</body>
+</html>

@@ -9,6 +9,9 @@ robot_follow = "follow"
 {% put styles %}
 <link rel="stylesheet" href="{{ 'assets/css/partials/home.css'|theme }}" async>
 {% endput %}
+{% put scripts %}
+<script type="text/javascript" src="{{ 'assets/library/jquery.cycle2/jquery.cycle2.min.js'|theme }}"></script>
+{% endput %}
 
 <div class="home-spot">
 	<div class="bg">
@@ -63,7 +66,7 @@ robot_follow = "follow"
 	</div>
 </div>
 
-
+{#
 <div class="categorias-home">
 	<div class="container">
 		<strong>Busca inmuebles por municipio</strong>
@@ -99,7 +102,7 @@ robot_follow = "follow"
 						<li><a href="#">Áticos</a></li>
 						<li><a href="#">Estudios</a></li>
 					</ul>
-				</div> #}
+				</div> # cerrar aca #
 			</div>
 			<div class="contents">
 				<div data-first="alquiler" data-second="viviendas" data-third="Pisos">
@@ -133,6 +136,19 @@ robot_follow = "follow"
 					<div class="item">16.290 <a href="{{ 'busqueda'|page }}">A Coruña</a></div>
 				</div>
 			</div>
+		</div>
+	</div>
+</div>
+#}
+<div class="categorias-home">
+	<div class="container">
+		<strong>Departamentos destacados</strong>
+		<br><br>
+		<div class="destacados">
+			{% partial 'dynamic/depto.htm' %}
+			{% partial 'dynamic/depto.htm' %}
+			{% partial 'dynamic/depto.htm' %}
+			{% partial 'dynamic/depto.htm' %}
 		</div>
 	</div>
 </div>

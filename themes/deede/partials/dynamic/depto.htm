@@ -1,0 +1,44 @@
+{#
+############## Requiere jquery.cycle2
+{% put scripts %}
+<script type="text/javascript" src="{{ 'assets/library/jquery.cycle2/jquery.cycle2.min.js'|theme }}"></script>
+{% endput %}
+#}
+{% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/partials/depto.css'|theme }}" async>
+{% endput %}
+<div class="depto">
+    <div class="imagen">
+        <div class="cycle-slideshow"
+        data-cycle-fx="scrollHorz"
+        data-cycle-timeout="0">
+            <div class="cycle-prev"></div>
+            <div class="cycle-next"></div>
+            <img src="{{ 'assets/img/ejemplos/01.jpg'|theme }}" alt="">
+            <img src="{{ 'assets/img/ejemplos/02.jpg'|theme }}" alt="">
+            <img src="{{ 'assets/img/ejemplos/03.jpg'|theme }}" alt="">
+            <img src="{{ 'assets/img/ejemplos/04.jpg'|theme }}" alt="">
+            <img src="{{ 'assets/img/ejemplos/05.jpg'|theme }}" alt="">
+            <img src="{{ 'assets/img/ejemplos/06.jpg'|theme }}" alt="">
+            <img src="{{ 'assets/img/ejemplos/07.jpg'|theme }}" alt="">
+            <img src="{{ 'assets/img/ejemplos/08.jpg'|theme }}" alt="">
+            <img src="{{ 'assets/img/ejemplos/09.jpg'|theme }}" alt="">
+            <img src="{{ 'assets/img/ejemplos/10.jpg'|theme }}" alt="">
+        </div>
+    </div>
+    <div class="desc">
+        <a href="{{ 'detalle'|page }}" class="enlace"></a>
+        <div class="logo-empresa">
+            <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
+        </div>
+        <div class="title">Piso en calle del Espíritu Santo, 6, Malasaña-Universidad, Madrid</div>
+        <div class="precio"><b>700</b> €/mes <span class="descuento">800 €</span></div>
+        <div class="detalle">1 hab. 65 m² Bajo interior sin ascensor</div>
+        <div class="texto">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt non impedit sit tenetur doloribus! Adipisci, temporibus eaque molestias consectetur minima veniam corporis perspiciatis, voluptates assumenda ut facere impedit rem magnam.
+        </div>
+        <div class="contacto">
+            <a href="#" class="tel">913 669 865</a>
+        </div>
+    </div>
+</div>

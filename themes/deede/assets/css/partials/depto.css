@@ -1,0 +1,159 @@
+.depto {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    background-color: #fff;
+    padding: 24px;
+    position: relative;
+    margin-bottom: 25px;
+    -webkit-box-shadow: 0 0 10px 2px rgba(39, 40, 89, 0.05);
+    box-shadow: 0 0 10px 2px rgba(39, 40, 89, 0.05);
+}
+
+.depto:last-child {
+    margin-bottom: 0;
+}
+
+.depto .desc {
+    position: relative;
+}
+
+.depto .imagen img {
+    height: 247px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.depto .imagen {
+    position: relative;
+    z-index: 0;
+}
+
+.depto .imagen .cycle-prev,
+.depto .imagen .cycle-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    transform: translateY(-50%);
+}
+
+.depto .imagen .cycle-prev {
+    left: 10px;
+}
+
+.depto .imagen .cycle-next {
+    right: 10px;
+}
+
+.depto .imagen .cycle-prev:before,
+.depto .imagen .cycle-next:before {
+    content: "";
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 8px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.depto .imagen .cycle-next:before {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.depto a.enlace {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: calc(100% + -50px);
+}
+
+.depto .title {
+    font-size: 1rem;
+}
+
+.depto .precio {
+    font-size: 0.9rem;
+    color: #666;
+    padding-bottom: 15px;
+}
+
+.depto .precio b {
+    font-weight: 500;
+    font-size: 135%;
+    color: #000;
+}
+
+.depto .precio .descuento {
+    color: var(--c-terciary);
+    text-decoration: line-through;
+    font-weight: 500;
+    font-size: 90%;
+    padding-left: 5px;
+}
+
+.depto .detalle {
+    font-size: 0.8rem;
+    padding-bottom: 20px;
+}
+
+.depto .texto {
+    color: #8E8F8C;
+    font-size: 0.8rem;
+    margin-bottom: 43px;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.depto .contacto a {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #444;
+}
+
+.depto .contacto a:hover {
+    color: var(--c-primary);
+}
+
+.depto .contacto a.tel:before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../../img/icons/phone-alt-solid.svg);
+    margin-right: 8px;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+
+.depto .logo-empresa {
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+    border: 1px solid #ddd;
+}
+
+.depto .logo-empresa img {
+    height: 53px;
+    width: 110px;
+    object-fit: cover;
+}
+
+/*Mobile*/
+@media screen and (max-width:900px) {
+    .depto {
+        display: block;
+    }
+
+    .depto .imagen {
+        margin-bottom: 15px;
+    }
+
+    .depto .imagen img {
+        height: 200px;
+    }
+}

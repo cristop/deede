@@ -1,0 +1,40 @@
+title = "Login"
+url = "/login"
+layout = "default"
+is_hidden = 0
+
+[account]
+redirect = "home"
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+==
+{% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/partials/sessions.css'|theme }}" async>
+<style>
+    label{
+        display: none;
+    }
+</style>
+{% endput %}
+<section>
+    <div class="container">
+        {% if not user %}
+            <h3 class="title">Iniciar sesion</h3>
+            {% partial account ~ '::signin' %}
+
+    {% else %}
+
+        {% partial account ~ '::activation_check' %}
+
+        {% partial account ~ '::update' %}
+
+        {% partial account ~ '::deactivate_link' %}
+
+    {% endif %}
+        <div class="text-center">
+            <br>
+            <a href="{{ 'registrarse'|page }}">No tengo cuenta</a> | <a href="#">Olvidaste tu clave?</a>
+        </div>
+    </div>
+</section>

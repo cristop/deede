@@ -1,0 +1,47 @@
+section {
+    min-height: calc(100vh - 267px);
+}
+
+.login section .container,
+.registrarse section .container {
+    max-width: 650px;
+    padding: 35px;
+}
+
+.login section .title,
+.registrarse section h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.login section a {
+    color: #222;
+}
+
+.login section a:hover {
+    text-decoration: underline;
+}
+
+.login section .container form,
+.registrarse section .container form {
+    text-align: center;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+[type="submit"] {
+    margin-top: 10px;
+    margin-bottom: 12px;
+}

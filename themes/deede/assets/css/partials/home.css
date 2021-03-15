@@ -70,6 +70,7 @@
 .home-spot form select,
 .home-spot form .buscar input {
     height: auto !important;
+    margin: 0;
 }
 
 .home-spot form .buscar input {

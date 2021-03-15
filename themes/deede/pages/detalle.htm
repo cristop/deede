@@ -10,6 +10,7 @@ robot_follow = "follow"
 <script type="text/javascript" src="{{ 'assets/library/jquery.cycle2/jquery.cycle2.min.js'|theme }}"></script>
 {% endput %}
 {% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/partials/depto.css'|theme }}" async>
 <link rel="stylesheet" href="{{ 'assets/css/partials/detalle.css'|theme }}" async>
 {% endput %}
 
@@ -44,12 +45,12 @@ robot_follow = "follow"
                 <h1 class="title">Piso en calle del Espíritu Santo, 6, Malasaña-Universidad, Madrid</h1>
                 <div class="precio"><b>700</b> €/mes <span class="descuento">800 €</span></div>
                 <div class="sep"></div>
-                <b>Comentario del anunciante</b> <br>
+                <b class="subtitle">Comentario del anunciante</b>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis debitis nesciunt temporibus tempora, praesentium deserunt quae sapiente ullam quasi voluptate iste optio possimus, ad odio quas dolor harum nihil consequuntur.
                 <div class="sep"></div>
                 <div class="flex caracteristicas">
                     <div>
-                        <b>Características básicas</b>
+                        <b class="subtitle">Características básicas</b>
                         <ul>
                             <li>21 m² construidos</li>
                             <li>Sin habitación</li>
@@ -63,7 +64,7 @@ robot_follow = "follow"
                         </ul>
                     </div>
                     <div>
-                        <b>Edificio</b>
+                        <b class="subtitle">Edificio</b>
                         <ul>
                             <li>Planta 8ª exterior</li>
                             <li>con ascensor</li>
@@ -72,29 +73,34 @@ robot_follow = "follow"
                 </div>
             </div>
             <div class="white-bg">
-                <b>Ubicación en Google Maps</b>
+                <b class="subtitle">Ubicación en Google Maps</b>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194347.38440735618!2d-3.8196211943268215!3d40.438131080750914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2zTWFkcmlkLCBFc3Bhw7Fh!5e0!3m2!1ses-419!2sus!4v1615578811594!5m2!1ses-419!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
         <div class="col">
             <div class="white-bg">
                 <form action="">
-                    <b>Contacta al anunciante</b>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Hola, me interesa este piso y me gustaría hacer una visita. Un saludo"></textarea>
-                    <label>Tu email</label>
-                    <input type="email" required>
-                    <label>Tu telefono</label>
-                    <input type="tel" required>
-                    <label>Tu nombre</label>
-                    <input type="text" required>
-                    <button type="submit">Contactar</button>
+                    <b class="subtitle">Contacta al anunciante</b>
+                    <textarea name="" id="" cols="30" rows="10">Hola, me interesa este piso y me gustaría hacer una visita. Un saludo</textarea>
+                    <input type="email" placeholder="Tu email" required>
+                    <input type="tel" placeholder="Tu telefono" required>
+                    <input type="text" placeholder="Tu nombre" required>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Contactar</button>
+                    </div>
                 </form>
-                <a href="#" class="tel">918 003 293</a>
                 <div class="sep"></div>
-                Profesional <br>
-                Real State
+                <b class="subtitle">Profesional</b>
+                <table width="100%">
+                    <tr>
+                        <td>Real State</td>
+                        <td align="right"><a href="#" class="tel">918 003 293</a></td>
+                    </tr>
+                </table>
                 <div class="logo-empresa">
-                    <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
+                    <a href="#">
+                        <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
+                    </a>
                 </div>
             </div>
         </div>

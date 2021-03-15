@@ -12,8 +12,6 @@ description = "Default layout"
 
     <link rel="icon" type="image/png" href="{{ 'assets/img/LOGOdeede.svg'|theme }}" />
 
-    {% styles %}
-
 </head>
 
 <body class="{{ this.page.baseFileName }}">
@@ -36,6 +34,8 @@ description = "Default layout"
     <!-- Styles -->
     <link rel="stylesheet" href="{{ 'assets/css/normalize.css'|theme }}" media="all" async>
     <link rel="stylesheet" href="{{ 'assets/css/general.css'|theme }}" async>
+
+    {% styles %}
 
     <!-- jQuery -->
     <script src="{{ 'assets/library/jQuery/jquery-3.3.1.min.js'|theme }}"></script>

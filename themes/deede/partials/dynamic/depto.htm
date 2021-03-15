@@ -3,27 +3,28 @@
 {% put scripts %}
 <script type="text/javascript" src="{{ 'assets/library/jquery.cycle2/jquery.cycle2.min.js'|theme }}"></script>
 {% endput %}
-#}
 {% put styles %}
-<link rel="stylesheet" href="{{ 'assets/css/partials/depto.css'|theme }}" async>
+<link rel="stylesheet" href="{{ 'assets/css/partials/detalle.css'|theme }}" async>
 {% endput %}
+#}
 <div class="depto">
     <div class="imagen">
         <div class="cycle-slideshow"
         data-cycle-fx="scrollHorz"
-        data-cycle-timeout="0">
+        data-cycle-timeout="0"
+        data-cycle-slides="> a">
             <div class="cycle-prev"></div>
             <div class="cycle-next"></div>
-            <img src="{{ 'assets/img/ejemplos/01.jpg'|theme }}" alt="">
-            <img src="{{ 'assets/img/ejemplos/02.jpg'|theme }}" alt="">
-            <img src="{{ 'assets/img/ejemplos/03.jpg'|theme }}" alt="">
-            <img src="{{ 'assets/img/ejemplos/04.jpg'|theme }}" alt="">
-            <img src="{{ 'assets/img/ejemplos/05.jpg'|theme }}" alt="">
-            <img src="{{ 'assets/img/ejemplos/06.jpg'|theme }}" alt="">
-            <img src="{{ 'assets/img/ejemplos/07.jpg'|theme }}" alt="">
-            <img src="{{ 'assets/img/ejemplos/08.jpg'|theme }}" alt="">
-            <img src="{{ 'assets/img/ejemplos/09.jpg'|theme }}" alt="">
-            <img src="{{ 'assets/img/ejemplos/10.jpg'|theme }}" alt="">
+            <a href="{{ 'detalle'|page }}"><img src="{{ 'assets/img/ejemplos/01.jpg'|theme }}" alt=""></a>
+            <a href="{{ 'detalle'|page }}"><img src="{{ 'assets/img/ejemplos/02.jpg'|theme }}" alt=""></a>
+            <a href="{{ 'detalle'|page }}"><img src="{{ 'assets/img/ejemplos/03.jpg'|theme }}" alt=""></a>
+            <a href="{{ 'detalle'|page }}"><img src="{{ 'assets/img/ejemplos/04.jpg'|theme }}" alt=""></a>
+            <a href="{{ 'detalle'|page }}"><img src="{{ 'assets/img/ejemplos/05.jpg'|theme }}" alt=""></a>
+            <a href="{{ 'detalle'|page }}"><img src="{{ 'assets/img/ejemplos/06.jpg'|theme }}" alt=""></a>
+            <a href="{{ 'detalle'|page }}"><img src="{{ 'assets/img/ejemplos/07.jpg'|theme }}" alt=""></a>
+            <a href="{{ 'detalle'|page }}"><img src="{{ 'assets/img/ejemplos/08.jpg'|theme }}" alt=""></a>
+            <a href="{{ 'detalle'|page }}"><img src="{{ 'assets/img/ejemplos/09.jpg'|theme }}" alt=""></a>
+            <a href="{{ 'detalle'|page }}"><img src="{{ 'assets/img/ejemplos/10.jpg'|theme }}" alt=""></a>
         </div>
     </div>
     <div class="desc">

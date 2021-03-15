@@ -51,6 +51,21 @@ section.top {
     box-shadow: 0 0 10px 2px rgba(39, 40, 89, 0.05);
 }
 
+.detalle-section .white-bg b.subtitle {
+    display: block;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+}
+
+.detalle-section .white-bg textarea {
+    height: 46px;
+    line-height: 1.4;
+}
+
+.detalle-section .white-bg ul {
+    margin: 0;
+}
+
 .detalle-section .galeria {
     text-align: center;
     margin-bottom: 20px;
@@ -63,6 +78,12 @@ section.top {
     height: 400px;
     width: 100%;
     object-fit: contain;
+}
+
+.detalle-section .white-bg label {
+    display: block;
+    font-weight: 400;
+    font-size: 0.7rem;
 }
 
 /*Mobile*/
@@ -150,4 +171,25 @@ section.top {
     .similares-container .depto .imagen {
         margin-bottom: 15px;
     }
+}
+
+.detalle-section .tel {
+    font-weight: 500;
+    color: #444;
+}
+
+.detalle-section .tel:before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../../img/icons/phone-alt-solid.svg);
+    margin-right: 8px;
+    opacity: 0.7;
+    transform: translateY(3px);
+}
+
+.detalle-section .logo-empresa {
+    border: 1px solid #eee;
+    margin-top: 15px;
 }

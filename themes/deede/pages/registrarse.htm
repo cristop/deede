@@ -1,0 +1,38 @@
+title = "Registrarse"
+url = "/registrarse"
+layout = "default"
+meta_title = ""
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[account]
+redirect = "home"
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+==
+{% put styles %}
+<link rel="stylesheet" href="{{ 'assets/css/partials/sessions.css'|theme }}" async>
+<style>
+    label{
+        display: none;
+    }
+</style>
+{% endput %}
+<section>
+    <div class="container">
+        {% if not user %}
+                {% partial __SELF__ ~ '::register' %}
+
+        {% else %}
+
+            {% partial __SELF__ ~ '::activation_check' %}
+
+            {% partial __SELF__ ~ '::update' %}
+
+            {% partial __SELF__ ~ '::deactivate_link' %}
+
+        {% endif %}
+    </div>
+</section>

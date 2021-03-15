@@ -18,6 +18,15 @@
     position: relative;
 }
 
+.depto .imagen a{
+    display: block;
+    width: 100%;
+    -webkit-transition: all 0s ease;
+    -moz-transition: all 0s ease;
+    -ms-transition: all 0s ease;
+    -o-transition: all 0s ease;
+    transition: all 0s ease;
+}
 .depto .imagen img {
     height: 247px;
     width: 100%;
@@ -40,10 +49,14 @@
 
 .depto .imagen .cycle-prev {
     left: 10px;
+    padding: 10px;
+    padding-left: 0;
 }
 
 .depto .imagen .cycle-next {
     right: 10px;
+    padding: 10px;
+    padding-right: 0;
 }
 
 .depto .imagen .cycle-prev:before,
@@ -66,7 +79,7 @@
     display: block;
     position: absolute;
     width: 100%;
-    height: calc(100% + -50px);
+    height: calc(100% + -130px);
 }
 
 .depto .title {

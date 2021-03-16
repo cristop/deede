@@ -14,24 +14,38 @@ security = "all"
 			<div></div>
 		</button>
 		<nav class="menu-main">
-			<a href="{{ 'registrarse'|page }}">Pon tu anuncio gratis</a>
-			<a href="{{ 'login'|page }}" class="iniciar-sesion">
-                {% if user %}
-                    Mi cuenta
-                {% else %}
-                    Iniciar sesión
-                {% endif %}
-            </a>
+			<ul>
+				<li>
+					<a href="{{ 'registrarse'|page }}">Pon tu anuncio gratis</a>
+				</li>
+				{% if user %}
+				<li>
+					<a href="#" class="iniciar-sesion" onclick="return false;">
+							{{ user.name }} {{ user.surname }} <img src="{{ user.getAvatarThumb(82) }}" alt="{{ user.name }} {{ user.surname }}" width="30" />
+					</a>
+					<ul>
+						<li>
+							<a href="{{ 'login'|page }}">Mis publicaciones</a>
+						</li>
+						<li>
+							<a href="{{ 'login'|page }}">Cambiar clave</a>
+						</li>
+						<li>
+							<a href="#" data-request="onLogout" data-request-data="redirect: '/'">Cerrar Sesión</a>
+						</li>
+					</ul>
+				</li>
+				{% else %}
+				<li>
+					<a href="{{ 'login'|page }}" class="iniciar-sesion">
+						Iniciar sesión
+					</a>
+				</li>
+				{% endif %}
+			</ul>
 		</nav>
 		<a href="/" class="logo js-scroll">
 			<img src="{{ 'assets/img/logoBLANCO.svg'|theme }}" alt="" class="full-logo" width="100" />
 		</a>
-		{% if user %}
-			<a href="{{ 'session/perfil'|page }}" class="on-sesion c-primary">
-				<!-- <img src="{{ 'assets/img/icons/user.svg'|theme }}" width="30" /> -->
-				<img src="{{ user.getAvatarThumb(82) }}" alt="{{ user.name }} {{ user.surname }}" width="30" />
-				{{ user.person.company }}
-			</a>
-		{% endif %}
 	</div>
 </header>

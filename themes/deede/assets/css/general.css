@@ -98,7 +98,7 @@ textarea {
   display: inline-block;
   width: 100%;
   border: 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ebebeb;
   background-color: #fff;
   padding: 0 10px;
   margin-bottom: 15px;
@@ -150,6 +150,10 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: var(--c-hover);
   color: white;
+}
+
+input[type="password"] {
+  font-family: 'Arial', sans-serif;
 }
 
 select {

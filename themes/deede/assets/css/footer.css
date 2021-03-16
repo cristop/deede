@@ -30,6 +30,10 @@ footer li a:hover {
     color: var(--c-primary);
 }
 
+footer .logo{
+	filter: grayscale(0.8);
+}
+
 /*Mobile*/
 @media screen and (max-width:900px){
 	footer{

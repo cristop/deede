@@ -86,7 +86,7 @@ $(window).resize(function () {
 });
 function quitMenuResponsive() {
   if ($(window).width() <= 800) {
-    $('.menu-main a').click(function (event) {
+    $('.menu-main a').not('[href="#"]').click(function (event) {
       openMenu();
     });
   }

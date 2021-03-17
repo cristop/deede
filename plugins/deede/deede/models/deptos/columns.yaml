@@ -1,0 +1,28 @@
+columns:
+    nombre_depto:
+        label: nombre_depto
+        type: text
+        searchable: true
+    precio:
+        label: precio
+        type: text
+        searchable: true
+    operacion:
+        label: Operacion
+        type: text
+        searchable: true
+    tipo_vivienda:
+        label: Tipo
+        type: text
+    published:
+        label: Published
+        type: text
+        searchable: false
+    destacado:
+        label: Destacado
+        type: text
+        searchable: false
+    created_at:
+        label: created_at
+        type: datetime
+        searchable: false

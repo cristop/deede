@@ -1,0 +1,10 @@
+name: Deptos
+form: $/deede/deede/models/deptos/fields.yaml
+modelClass: Deede\Deede\Models\Deptos
+defaultRedirect: deede/deede/deptos
+create:
+    redirect: 'deede/deede/deptos/update/:id'
+    redirectClose: deede/deede/deptos
+update:
+    redirect: deede/deede/deptos
+    redirectClose: deede/deede/deptos

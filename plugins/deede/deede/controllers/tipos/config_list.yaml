@@ -1,0 +1,12 @@
+list: $/deede/deede/models/tipos_vivienda/columns.yaml
+modelClass: Deede\Deede\Models\Tipos_vivienda
+title: Tipos
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'deede/deede/tipos/update/:id'

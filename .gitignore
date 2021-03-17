@@ -7,3 +7,4 @@ vendor/
 artisan/
 index.php
 server.php
+bd.txt

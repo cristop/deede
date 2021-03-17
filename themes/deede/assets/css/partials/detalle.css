@@ -66,6 +66,27 @@ section.top {
     margin: 0;
 }
 
+.detalle-section .precio {
+    font-size: 0.9rem;
+    color: #666;
+    padding-bottom: 5px;
+}
+
+.detalle-section .precio b {
+    font-weight: 500;
+    font-size: 135%;
+    color: #000;
+}
+
+.detalle-section .precio .descuento {
+    color: var(--c-terciary);
+    text-decoration: line-through;
+    font-weight: 500;
+    font-size: 90%;
+    padding-left: 5px;
+}
+
+
 .detalle-section .galeria {
     text-align: center;
     margin-bottom: 20px;

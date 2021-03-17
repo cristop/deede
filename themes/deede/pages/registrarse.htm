@@ -14,25 +14,158 @@ requirePassword = 0
 ==
 {% put styles %}
 <link rel="stylesheet" href="{{ 'assets/css/partials/sessions.css'|theme }}" async>
-<style>
-    label{
-        display: none;
-    }
-</style>
 {% endput %}
 <section>
     <div class="container">
         {% if not user %}
-                {% partial __SELF__ ~ '::register' %}
-
+            {% partial __SELF__ ~ '::register' %}
+            {% put styles %}
+            <style>
+                label{
+                    display: none;
+                }
+            </style>
+            {% endput %}
         {% else %}
+            {% put styles %}
+            <style>
+                input[type="text"],
+                input[type="number"],
+                input[type="tel"],
+                input[type="email"],
+                input[type="password"],
+                input[type="search"],
+                select,
+                textarea {
+                    margin-bottom: 0
+                }
+            </style>
+            {% endput %}
+            <form action="">
+                <div class="flex">
+                    <div>
+                        <h3 class="title" style="text-align: left">Cargar nueva publicación</h3>
+                    </div>
+                </div>
 
-            {% partial __SELF__ ~ '::activation_check' %}
+                <div class="flex">
+                    <div>
+                        <label>Operación</label>
+                        <select name="operacion" id="operacion" required>
+                            <option value="Venta">Venta</option>
+                            <option value="Alquiler">Alquiler</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Tipo</label>
+                        <select name="tipo_vivienda" id="tipo_vivienda" required>
+                            <option value="Viviendas">Viviendas</option>
+                        </select>
+                    </div>
+                </div>
 
-            {% partial __SELF__ ~ '::update' %}
+                <div class="flex">
+                    <div>
+                        <label>Nombre a mostrar</label>
+                        <input type="text" name="nombre_depto" required>
+                    </div>
+                </div>
 
-            {% partial __SELF__ ~ '::deactivate_link' %}
+                <div class="flex">
+                    <div>
+                        <label>Subir imagenes</label>
+                        <input type="file" name="galeria" id="galeria" multiple>
+                    </div>
+                </div>
 
+                <div class="flex">
+                    <div>
+                        <label>Precio</label>
+                        <input type="text" name="precio" required>
+                    </div>
+                    <div>
+                        <label>Precio viejo</label>
+                        <input type="text" name="precio_viejo">
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <label>Comentario</label>
+                        <input type="text" name="comentario" required>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <label>M2</label>
+                        <input type="text" name="m2">
+                    </div>
+                    <div>
+                        <label>Habitaciones</label>
+                        <select name="habitaciones" id="habitaciones">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <label>Baños</label>
+                        <select name="banios" id="banios">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Estado</label>
+                        <input type="text" name="estado">
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <label>Orientacion</label>
+                        <input type="text" name="orientacion">
+                    </div>
+                    <div>
+                        <label>Gmap</label>
+                        <input type="text" name="gmap">
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <label>Piso - ubicación</label>
+                        <input type="text" name="edificio_piso_ubicacion">
+                    </div>
+                    <div>
+                        <label>Ascensor?</label>
+                        <input type="text" name="edificio_ascensor">
+                    </div>
+                </div>
+
+                <div class="flex text-center">
+                    <div>
+                        <button class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </form>
         {% endif %}
     </div>
 </section>

@@ -1,0 +1,101 @@
+fields:
+    operacion:
+        label: Operacion
+        span: auto
+        options:
+            'Alquiler': Alquiler
+            'Compra': Compra
+        showSearch: true
+        type: dropdown
+    tipo_vivienda:
+        label: 'Tipo vivienda'
+        span: auto
+        type: dropdown
+    published:
+        label: 'Publicar?'
+        span: auto
+        default: 1
+        type: checkbox
+    nombre_depto:
+        label: 'Nombre Depto'
+        span: full
+        type: text
+    precio:
+        label: Precio
+        span: auto
+        type: text
+    precio_viejo:
+        label: 'Precio Viejo'
+        span: auto
+        type: text
+    comentario:
+        label: Comentario
+        size: ''
+        span: full
+        type: textarea
+    m2:
+        label: M2
+        span: auto
+        type: text
+    habitaciones:
+        label: Habitaciones
+        options:
+            1: '1'
+            2: '2'
+            3: '3'
+            4: '4'
+            5: '5'
+            6: '6'
+            7: '7'
+            8: '8'
+            9: '9'
+            10: '10'
+            11: '11'
+            12: '12'
+        showSearch: true
+        span: auto
+        type: dropdown
+    banios:
+        label: Baños
+        options:
+            1: '1'
+            2: '2'
+            3: '3'
+            4: '4'
+            5: '5'
+        showSearch: true
+        span: auto
+        type: dropdown
+    estado:
+        label: Estado
+        options:
+            'Primera mano': 'Primera mano'
+            'Segunda mano': 'Segunda mano'
+        showSearch: true
+        span: auto
+        type: dropdown
+    orientacion:
+        label: Orientacion
+        span: auto
+        type: text
+    galeria:
+        label: Galeria
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+tabs:
+    fields:
+        edificio_piso_ubicacion:
+            label: 'Piso - Ubicacion'
+            span: auto
+            type: text
+            tab: Edificio
+        edificio_ascensor:
+            label: Ascesor
+            span: auto
+            type: text
+            tab: Edificio

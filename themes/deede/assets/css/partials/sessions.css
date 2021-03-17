@@ -11,7 +11,7 @@ section {
 .login section .title,
 .registrarse section h3 {
     margin-bottom: 20px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -52,4 +52,12 @@ label {
     font-size: 0.65rem;
     margin-top: 10px;
     text-align: left;
+}
+
+input[type="file"] {
+    display: block;
+    border-bottom: 1px dashed #ccc;
+    width: 100%;
+    padding: 10px 0px;
+    margin-top: 12px;
 }

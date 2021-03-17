@@ -1,0 +1,5 @@
+fields:
+    tipo:
+        label: 'Nombre Tipo'
+        span: full
+        type: text

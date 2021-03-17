@@ -1,0 +1,12 @@
+list: $/deede/deede/models/deptos/columns.yaml
+modelClass: Deede\Deede\Models\Deptos
+title: Deptos
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'deede/deede/deptos/update/:id'

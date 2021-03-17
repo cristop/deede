@@ -1,0 +1,20 @@
+plugin:
+    name: 'deede.deede::lang.plugin.name'
+    description: 'deede.deede::lang.plugin.description'
+    author: deede
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Deede
+        url: deede/deede/deptos
+        icon: icon-adjust
+        sideMenu:
+            side-menu-item2:
+                label: Deptos
+                url: deede/deede/deptos
+                icon: icon-home
+            side-menu-item:
+                label: Tipos
+                url: deede/deede/tipos
+                icon: icon-sitemap

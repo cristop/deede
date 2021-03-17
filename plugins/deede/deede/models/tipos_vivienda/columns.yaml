@@ -1,0 +1,11 @@
+columns:
+    tipo:
+        label: 'Nombre Tipo'
+        type: text
+        searchable: true
+    id:
+        label: id
+        type: number
+    created_at:
+        label: created_at
+        type: datetime

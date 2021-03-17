@@ -1,0 +1,10 @@
+name: Tipos
+form: $/deede/deede/models/tipos_vivienda/fields.yaml
+modelClass: Deede\Deede\Models\Tipos_vivienda
+defaultRedirect: deede/deede/tipos
+create:
+    redirect: 'deede/deede/tipos/update/:id'
+    redirectClose: deede/deede/tipos
+update:
+    redirect: deede/deede/tipos
+    redirectClose: deede/deede/tipos

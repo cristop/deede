@@ -348,3 +348,9 @@ section:not([class]) .container {
   box-shadow: rgba(39, 40, 89, 0.05) 0px 0px 10px 2px;
   padding: 20px;
 }
+
+.alert {
+  color: #8da85e;
+  border: 1px solid #8da85e;
+  line-height: 1.8;
+}

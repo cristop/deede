@@ -12,6 +12,37 @@ paramCode = "code"
 forceSecure = 0
 requirePassword = 0
 ==
+<?php
+use Deede\Deede\Models\Deptos as Deptos;
+use Deede\Deede\Models\Tipos_vivienda as Tipos;
+use Input;
+
+function onStart(){
+    $this['tipos'] = Tipos::all();
+}
+
+function onSaveDepto(){
+    $depto = new Deptos;
+    $depto->operacion = post('operacion');
+    $depto->tipo_vivienda = post('tipo_vivienda');
+    $depto->nombre_depto = post('nombre_depto');
+    $depto->precio = post('precio');
+    $depto->precio_viejo = post('precio_viejo');
+    $depto->comentario = post('comentario');
+    $depto->m2 = post('m2');
+    $depto->habitaciones = post('habitaciones');
+    $depto->banios = post('banios');
+    $depto->estado = post('estado');
+    $depto->orientacion = post('orientacion');
+    $depto->gmap = post('gmap');
+    $depto->edificio_piso_ubicacion = post('edificio_piso_ubicacion');
+    $depto->edificio_ascensor = post('edificio_ascensor');
+    $depto->id_user = post('id_user');
+    $depto->galeria = Input::file('galeria');
+    $depto->save();
+}
+?>
+==
 {% put styles %}
 <link rel="stylesheet" href="{{ 'assets/css/partials/sessions.css'|theme }}" async>
 {% endput %}
@@ -41,131 +72,161 @@ requirePassword = 0
                 }
             </style>
             {% endput %}
-            <form action="">
-                <div class="flex">
-                    <div>
-                        <h3 class="title" style="text-align: left">Cargar nueva publicación</h3>
-                    </div>
+            <div class="flex">
+                <div>
+                    <h3 class="title" style="text-align: left">Cargar nueva publicación</h3>
                 </div>
+            </div>
+            <form 
+            action="{{ url('registrarse') }}"
+            data-request-success="this.reset(); $('.form').fadeOut(); $('.alert.ok').fadeIn();" 
+            accept-charset="UTF8" 
+            enctype="multipart/form-data" 
+            method="POST">
+                <input type="hidden" name="_handler" value="onSaveDepto">
 
-                <div class="flex">
-                    <div>
-                        <label>Operación</label>
-                        <select name="operacion" id="operacion" required>
-                            <option value="Venta">Venta</option>
-                            <option value="Alquiler">Alquiler</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Tipo</label>
-                        <select name="tipo_vivienda" id="tipo_vivienda" required>
-                            <option value="Viviendas">Viviendas</option>
-                        </select>
-                    </div>
-                </div>
+                {{ form_token() }}
 
-                <div class="flex">
-                    <div>
-                        <label>Nombre a mostrar</label>
-                        <input type="text" name="nombre_depto" required>
-                    </div>
-                </div>
+                {{ form_sessionKey() }}
 
-                <div class="flex">
+                {% if post(nombre_depto) %}
+                <div class="flex alert ok">
                     <div>
-                        <label>Subir imagenes</label>
-                        <input type="file" name="galeria" id="galeria" multiple>
+                        El depto fue cargado correctamente. <br>
+                        Podes ver la publicacion en la seccion "Mis Publicaciones".
                     </div>
                 </div>
+                {% else %}
+                <div class="form">
+                    
 
-                <div class="flex">
-                    <div>
-                        <label>Precio</label>
-                        <input type="text" name="precio" required>
+                    <div class="flex">
+                        <div>
+                            <label>Operación</label>
+                            <select name="operacion" id="operacion" required>
+                                <option value="">-</option>
+                                <option value="Venta">Venta</option>
+                                <option value="Alquiler">Alquiler</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Tipo</label>
+                            <select name="tipo_vivienda" id="tipo_vivienda" required>
+                                <option value="">-</option>
+                                {% for tipo in tipos %}
+                                <option value="{{ tipo.id }}">{{ tipo.tipo }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <label>Precio viejo</label>
-                        <input type="text" name="precio_viejo">
-                    </div>
-                </div>
 
-                <div class="flex">
-                    <div>
-                        <label>Comentario</label>
-                        <input type="text" name="comentario" required>
+                    <div class="flex">
+                        <div>
+                            <label>Nombre a mostrar</label>
+                            <input type="text" name="nombre_depto" required>
+                        </div>
                     </div>
-                </div>
 
-                <div class="flex">
-                    <div>
-                        <label>M2</label>
-                        <input type="text" name="m2">
+                    <div class="flex">
+                        <div>
+                            <label>Subir imagenes</label>
+                            <input type="file" name="galeria" id="galeria" multiple>
+                        </div>
                     </div>
-                    <div>
-                        <label>Habitaciones</label>
-                        <select name="habitaciones" id="habitaciones">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                    </div>
-                </div>
 
-                <div class="flex">
-                    <div>
-                        <label>Baños</label>
-                        <select name="banios" id="banios">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
+                    <div class="flex">
+                        <div>
+                            <label>Precio</label>
+                            <input type="text" name="precio" required>
+                        </div>
+                        <div>
+                            <label>Precio viejo</label>
+                            <input type="text" name="precio_viejo">
+                        </div>
                     </div>
-                    <div>
-                        <label>Estado</label>
-                        <input type="text" name="estado">
-                    </div>
-                </div>
 
-                <div class="flex">
-                    <div>
-                        <label>Orientacion</label>
-                        <input type="text" name="orientacion">
+                    <div class="flex">
+                        <div>
+                            <label>Comentario</label>
+                            <input type="text" name="comentario" required>
+                        </div>
                     </div>
-                    <div>
-                        <label>Gmap</label>
-                        <input type="text" name="gmap">
-                    </div>
-                </div>
 
-                <div class="flex">
-                    <div>
-                        <label>Piso - ubicación</label>
-                        <input type="text" name="edificio_piso_ubicacion">
+                    <div class="flex">
+                        <div>
+                            <label>M2</label>
+                            <input type="text" name="m2">
+                        </div>
+                        <div>
+                            <label>Habitaciones</label>
+                            <select name="habitaciones" id="habitaciones">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <label>Ascensor?</label>
-                        <input type="text" name="edificio_ascensor">
-                    </div>
-                </div>
 
-                <div class="flex text-center">
-                    <div>
-                        <button class="btn btn-primary">Enviar</button>
+                    <div class="flex">
+                        <div>
+                            <label>Baños</label>
+                            <select name="banios" id="banios">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Estado</label>
+                            <input type="text" name="estado">
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div>
+                            <label>Orientacion</label>
+                            <input type="text" name="orientacion">
+                        </div>
+                        <div>
+                            <label>Gmap</label>
+                            <input type="text" name="gmap">
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div>
+                            <label>Piso - ubicación</label>
+                            <input type="text" name="edificio_piso_ubicacion">
+                        </div>
+                        <div>
+                            <label>Ascensor?</label>
+                            <input type="text" name="edificio_ascensor">
+                        </div>
+                    </div>
+
+                    <div class="flex text-center">
+                        <div>
+                            <input type="hidden" name="id_user" value="{{ user.id }}">
+                            <button class="btn btn-primary" type="submit">Enviar</button>                        
+                        </div>
                     </div>
                 </div>
+                {% endif %}
+                
             </form>
+                
         {% endif %}
     </div>
 </section>

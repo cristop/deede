@@ -1,0 +1,5 @@
+.mis-publicaciones section .container {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    min-height: calc(100vh + -457px);
+}

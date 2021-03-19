@@ -6,6 +6,15 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 ==
+<?php
+use Deede\Deede\Models\Deptos as Deptos;
+use Deede\Deede\Models\Tipos_vivienda as Tipos;
+
+function onStart(){
+    $this['deptos'] = Deptos::where('published',1)->orderBy('id','desc')->get();
+}
+?>
+==
 {% put styles %}
 <link rel="stylesheet" href="{{ 'assets/css/partials/depto.css'|theme }}" async>
 <link rel="stylesheet" href="{{ 'assets/css/partials/busqueda.css'|theme }}" async>
@@ -77,10 +86,22 @@ robot_follow = "follow"
                 <a href="#">Recientes</a>
             </div>
             <div>
-                {% partial 'dynamic/depto.htm' %}
-                {% partial 'dynamic/depto.htm' %}
-                {% partial 'dynamic/depto.htm' %}                
+                {% for depto in deptos %}                    
+                    {% 
+                        partial 'dynamic/depto.htm' 
+                        title = depto.nombre_depto 
+                        precio = depto.precio
+                        precio_viejo = depto.precio_viejo
+                        comentario = depto.comentario
+                        galeria = depto.galeria 
+                        habitaciones = depto.habitaciones 
+                        m2 = depto.m2 
+                        orientacion = depto.orientacion 
+                        edificio_ascensor = depto.edificio_ascensor 
+                    %}
+                {% endfor %}
             </div>
+            {# Pagination
             <div>
                 <ul class="pagination">
                     <li>
@@ -94,7 +115,7 @@ robot_follow = "follow"
                         <a href="#" class="next"></a>
                     </li>
                 </ul>
-            </div>
+            </div>#}
         </div>
     </div>
 </div>

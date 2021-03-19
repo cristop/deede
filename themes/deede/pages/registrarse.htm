@@ -22,25 +22,52 @@ function onStart(){
 }
 
 function onSaveDepto(){
-    $depto = new Deptos;
-    $depto->operacion = post('operacion');
-    $depto->tipo_vivienda = post('tipo_vivienda');
-    $depto->nombre_depto = post('nombre_depto');
-    $depto->precio = post('precio');
-    $depto->precio_viejo = post('precio_viejo');
-    $depto->comentario = post('comentario');
-    $depto->m2 = post('m2');
-    $depto->habitaciones = post('habitaciones');
-    $depto->banios = post('banios');
-    $depto->estado = post('estado');
-    $depto->orientacion = post('orientacion');
-    $depto->gmap = post('gmap');
-    $depto->edificio_piso_ubicacion = post('edificio_piso_ubicacion');
-    $depto->edificio_ascensor = post('edificio_ascensor');
-    $depto->id_user = post('id_user');
-    $depto->galeria = Input::file('galeria');
-    $depto->save();
+    if($this['session']->user()){
+        if(post('nombre_depto')){
+
+            $findDepto = Deptos::where('operacion',post('operacion'))
+                ->where('tipo_vivienda',post('tipo_vivienda'))
+                ->where('nombre_depto',post('nombre_depto'))
+                ->where('precio',post('precio'))
+                ->where('precio_viejo',post('precio_viejo'))
+                ->where('comentario',post('comentario'))
+                ->where('m2',post('m2'))
+                ->where('tipo_vivienda',post('tipo_vivienda'))
+                ->where('id_user',post('id_user'))
+                ->count();
+
+            if($findDepto > 0){
+                $this['success_ok'] = "0";
+                unset($_POST);
+            }else{
+                $depto = new Deptos;
+                $depto->operacion = post('operacion');
+                $depto->tipo_vivienda = post('tipo_vivienda');
+                $depto->nombre_depto = post('nombre_depto');
+                $depto->precio = post('precio');
+                $depto->precio_viejo = post('precio_viejo');
+                $depto->comentario = post('comentario');
+                $depto->m2 = post('m2');
+                $depto->habitaciones = post('habitaciones');
+                $depto->banios = post('banios');
+                $depto->estado = post('estado');
+                $depto->orientacion = post('orientacion');
+                $depto->gmap = post('gmap');
+                $depto->edificio_piso_ubicacion = post('edificio_piso_ubicacion');
+                $depto->edificio_ascensor = post('edificio_ascensor');
+                $depto->id_user = post('id_user');
+                $depto->galeria = Input::file('galeria');
+                $depto->save();
+
+                unset($_POST);
+                $this['success_ok'] = "1";
+            }
+        }else{
+            echo "No depto";
+        }
+    }
 }
+
 ?>
 ==
 {% put styles %}
@@ -89,11 +116,11 @@ function onSaveDepto(){
 
                 {{ form_sessionKey() }}
 
-                {% if post(nombre_depto) %}
+                {% if success_ok %}
                 <div class="flex alert ok">
                     <div>
                         El depto fue cargado correctamente. <br>
-                        Podes ver la publicacion en la seccion "Mis Publicaciones".
+                        Podes ver la publicacion en la seccion "<a href="{{ 'mis-publicaciones'|page }}">Mis Publicaciones</a>".
                     </div>
                 </div>
                 {% else %}
@@ -130,7 +157,7 @@ function onSaveDepto(){
                     <div class="flex">
                         <div>
                             <label>Subir imagenes</label>
-                            <input type="file" name="galeria" id="galeria" multiple>
+                            <input type="file" name="galeria[]" id="galeria" multiple>
                         </div>
                     </div>
 

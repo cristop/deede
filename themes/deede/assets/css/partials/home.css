@@ -235,23 +235,25 @@
     }
 }
 
-
 .destacados {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 25px;
 }
-.destacados .depto{
+
+.destacados .depto {
     display: block;
     overflow: hidden;
 }
+
 /*Mobile*/
-@media screen and (min-width:900px){
-	.destacados .depto{
-		margin-bottom: 0;
-	}
+@media screen and (min-width:900px) {
+    .destacados .depto {
+        margin-bottom: 0;
+    }
 }
-.destacados .depto:before{
+
+.destacados .depto:before {
     content: "Destacado";
     display: block;
     background-color: var(--c-fourth);
@@ -265,15 +267,18 @@
     transform: rotate(45deg);
     line-height: 1;
 }
-.destacados .depto .imagen{
+
+.destacados .depto .imagen {
     margin-bottom: 22px;
 }
-.destacados .depto .imagen img{
-    height: 180px
+
+.destacados .depto .imagen a {
+    height: 180px;
 }
+
 /*Mobile*/
-@media screen and (max-width:900px){
-	.destacados {
-		display: block;
-	}
+@media screen and (max-width:900px) {
+    .destacados {
+        display: block;
+    }
 }

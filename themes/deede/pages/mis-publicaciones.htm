@@ -28,9 +28,11 @@ function onStart(){
     <div class="container">
         <h2 class="title">Mis publicaciones</h2>
         <br>
-        {% for depto in deptos %}                    
+        {% for depto in deptos %} 
             {% 
                 partial 'dynamic/depto.htm' 
+                id = depto.id 
+                id_user = depto.id_user
                 title = depto.nombre_depto 
                 precio = depto.precio
                 precio_viejo = depto.precio_viejo

@@ -1,11 +1,32 @@
 title = "Detalle"
-url = "/detalle"
+url = "/detalle/:id_user?/:slug?"
 layout = "default"
 meta_title = ""
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
+
+[builderDetails]
+modelClass = "Deede\Deede\Models\Deptos"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "id"
+displayColumn = "nombre_depto"
+notFoundMessage = "Record not found"
 ==
+use Auth;
+use Deede\Deede\Models\Deptos;
+
+function onStart(){
+    $this['autor'] = Auth::findUserByid($this->param('id_user'));
+
+}
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+
+
 {% put scripts %}
 <script type="text/javascript" src="{{ 'assets/library/jquery.cycle2/jquery.cycle2.min.js'|theme }}"></script>
 {% endput %}
@@ -20,9 +41,104 @@ robot_follow = "follow"
     </div>
 </section>
 
+
+{% if record %}
+
 <section class="detalle-section">
     <div class="container">
         <div class="col">
+            <div class="white-bg">
+                <div class="galeria">
+                    <div class="cycle-slideshow"
+                    data-cycle-fx="scrollHorz"
+                    data-cycle-timeout="0">
+                        {% if record.galeria|length > 1 %}
+                            <div class="cycle-prev"></div>
+                            <div class="cycle-next"></div>
+                        {% endif %}
+
+                        {% if not record.galeria %}
+                            <img src="{{ 'assets/img/ejemplos/no-image.jpg'|theme }}" alt="">
+                        {% endif %}
+
+                        {% for gal in record.galeria %}
+                                <img src="{{ gal.getThumb(800, 'auto') }}" alt="">
+                        {% endfor %}
+                    </div>
+                </div>
+                <h1 class="title">{{ record.nombre_depto }}</h1>
+                <div class="precio">
+                    <b>{{ record.precio }}</b> €/mes 
+                    {% if record.precio_viejo  %}<span class="descuento">{{ record.precio_viejo }} €</span>{% endif %}
+                </div>
+                <div class="sep"></div>
+                <b class="subtitle">Comentario del anunciante</b>
+                {{ record.comentario }}
+                <div class="sep"></div>
+                <div class="flex caracteristicas">
+                    <div>
+                        <b class="subtitle">Características básicas</b>
+                        <ul>
+                            {% if record.m2 %}<li>{{ record.m2 }} m² construidos </li>{% endif %}
+                            {% if record.habitaciones %}<li>{{ record.habitaciones }} hab. </li>{% endif %}
+                            {% if record.banios %}<li>{{ record.banios }} baño</li>{% endif %}
+                            {% if record.estado %}<li>{{ record.estado }}</li>{% endif %}
+                            {% if record.orientacion %}<li>Orientacion: {{ record.orientacion }}</li>{% endif %}
+                            
+                        </ul>
+                    </div>
+                    <div>
+                        <b class="subtitle">Edificio</b>
+                        <ul>
+                            {% if record.edificio_piso_ubicacion %}<li>Ubicacion: {{ record.edificio_piso_ubicacion }}</li>{% endif %}
+                            {% if record.edificio_ascensor %}<li>Ascensor: {{ record.edificio_ascensor }}</li>{% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="white-bg">
+                <b class="subtitle">Ubicación en Google Maps</b>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194347.38440735618!2d-3.8196211943268215!3d40.438131080750914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2zTWFkcmlkLCBFc3Bhw7Fh!5e0!3m2!1ses-419!2sus!4v1615578811594!5m2!1ses-419!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="col">
+            <div class="white-bg">
+                <form action="">
+                    <b class="subtitle">Contacta al anunciante</b>
+                    <textarea name="" id="" cols="30" rows="10">Hola, me interesa este piso y me gustaría hacer una visita. Un saludo</textarea>
+                    <input type="email" placeholder="Tu email" required>
+                    <input type="tel" placeholder="Tu telefono" required>
+                    <input type="text" placeholder="Tu nombre" required>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Contactar</button>
+                    </div>
+                </form>
+                <div class="sep"></div>
+                <b class="subtitle">Publicado por:</b>
+                <table width="100%">
+                    <tr>
+                        <td>{{ autor.name }}</td>
+                        {% if autor.phone %}<td align="right"><a href="#" class="tel">{{ autor.phone }}</a></td>{% endif %}
+                    </tr>
+                </table>
+                {% if autor.getAvatarThumb(260) %}
+                <div class="logo-empresa">
+                    <a href="#">
+                        <img src="{{ autor.getAvatarThumb(260) }}" alt="">
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% else %}
+
+<section class="detalle-section">
+    <div class="container">
+        <div class="col" style="position: relative;z-index: 0;">
+            <div style="position: absolute;top: 0;left: 0;width: 100%;padding: 8px 27px;background-color: hsl(47deg 100% 53%);font-size: 0.7rem;z-index: 9;">Datos de prueba</div>
             <div class="white-bg">
                 <div class="galeria">
                     <div class="cycle-slideshow"
@@ -107,13 +223,15 @@ robot_follow = "follow"
     </div>
 </section>
 
+{% endif %}
+
 <section class="similares">
     <div class="container">
         <h2 class="title">Otros anuncios similares a este</h2>
         <div class="similares-container">
-            {% partial 'dynamic/depto.htm' %}
-            {% partial 'dynamic/depto.htm' %}
-            {% partial 'dynamic/depto.htm' %}
+            {% partial 'dynamic/depto.htm' example="1" %}
+            {% partial 'dynamic/depto.htm' example="1" %}
+            {% partial 'dynamic/depto.htm' example="1" %}
         </div>
     </div>
 </section>

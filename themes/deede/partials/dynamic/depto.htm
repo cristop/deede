@@ -57,13 +57,13 @@
             {% endif %}
 
             {% if not galeria %}
-            <a href="{{ 'detalle'|page }}">
+            <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': id  }) }}">
                 <img src="{{ 'assets/img/ejemplos/no-image.jpg'|theme }}" alt="">
             </a>
             {% endif %}
 
             {% for gal in galeria %}
-                <a href="{{ 'detalle'|page }}">
+                <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': id  }) }}">
                     <img src="{{ gal.getThumb(200, 'auto') }}" alt="">
                 </a>
             {% endfor %}
@@ -71,7 +71,7 @@
         </div>
     </div>
     <div class="desc">
-        <a href="{{ 'detalle'|page }}" class="enlace"></a>
+        <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': id  }) }}" class="enlace"></a>
         <div class="logo-empresa">
             <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
         </div>

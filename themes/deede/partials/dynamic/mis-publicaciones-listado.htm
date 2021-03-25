@@ -1,0 +1,23 @@
+==
+<?php
+use Deede\Deede\Models\Deptos as Deptos;
+use Deede\Deede\Models\Tipos_vivienda as Tipos;
+
+function onStart(){
+    $this['deptos'] = Deptos::where('published',1)
+        ->where('id_user',$this['session']->user()->id)
+        ->orderBy('id','desc')
+        ->get();
+    //echo "<br><br><br><br><br><br>".$this['session']->user()->id;
+}
+?>
+==
+{% for depto in deptos %} 
+    {% 
+        partial 'dynamic/depto.htm'  depto = depto
+    %}
+    <button class="delete" data-request="onDelete" data-request-confirm="Está seguro?"
+            data-request-data="id: {{ depto.id }}" data-request-update="'dynamic/mis-publicaciones-listado':'#listado'">
+        <img src="{{ 'assets/img/icons/trash-solid.svg'|theme }}" alt=""> Eliminar
+    </button> <br /><br />
+{% endfor %}

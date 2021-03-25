@@ -7,12 +7,9 @@ is_hidden = 0
 use Deede\Deede\Models\Deptos as Deptos;
 use Deede\Deede\Models\Tipos_vivienda as Tipos;
 
-function onStart(){
-    $this['deptos'] = Deptos::where('published',1)
-        ->where('id_user',$this['session']->user()->id)
-        ->orderBy('id','desc')
-        ->get();
-    //echo "<br><br><br><br><br><br>".$this['session']->user()->id;
+function onDelete(){
+    Deptos::where('id', post('id'))->delete();
+    return redirect()->refresh();
 }
 ?>
 ==
@@ -28,21 +25,8 @@ function onStart(){
     <div class="container">
         <h2 class="title">Mis publicaciones</h2>
         <br>
-        {% for depto in deptos %} 
-            {% 
-                partial 'dynamic/depto.htm' 
-                id = depto.id 
-                id_user = depto.id_user
-                title = depto.nombre_depto 
-                precio = depto.precio
-                precio_viejo = depto.precio_viejo
-                comentario = depto.comentario
-                galeria = depto.galeria 
-                habitaciones = depto.habitaciones 
-                m2 = depto.m2 
-                orientacion = depto.orientacion 
-                edificio_ascensor = depto.edificio_ascensor 
-            %}
-        {% endfor %}
+        <div id="listado">
+            {% partial 'dynamic/mis-publicaciones-listado' %}
+        </div>
     </div>
 </section>

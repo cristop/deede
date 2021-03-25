@@ -9,3 +9,9 @@
 1.0.4:
     - 'Created table deede_deede_tipos_vivienda'
     - builder_table_create_deede_deede_tipos_vivienda.php
+1.0.5:
+    - 'Updated table deede_deede_deptos'
+    - builder_table_update_deede_deede_deptos_2.php
+1.0.6:
+    - 'Updated table deede_deede_deptos'
+    - builder_table_update_deede_deede_deptos_3.php

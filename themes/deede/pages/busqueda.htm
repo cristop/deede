@@ -88,18 +88,7 @@ function onStart(){
             <div>
                 {% for depto in deptos %}
                     {% 
-                        partial 'dynamic/depto.htm' 
-                        id = depto.id
-                        id_user = depto.id_user
-                        title = depto.nombre_depto 
-                        precio = depto.precio
-                        precio_viejo = depto.precio_viejo
-                        comentario = depto.comentario
-                        galeria = depto.galeria 
-                        habitaciones = depto.habitaciones 
-                        m2 = depto.m2 
-                        orientacion = depto.orientacion 
-                        edificio_ascensor = depto.edificio_ascensor 
+                        partial 'dynamic/depto.htm' depto = depto
                     %}
                 {% endfor %}
             </div>

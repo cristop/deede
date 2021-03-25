@@ -3,3 +3,27 @@
     box-shadow: none !important;
     min-height: calc(100vh + -457px);
 }
+
+.mis-publicaciones .delete {
+    background-color: var(--c-primary);
+    color: white;
+    display: block;
+    padding: 7px 31px;
+    margin-top: -24px;
+    border: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.mis-publicaciones .delete:hover {
+    background-color: #222;
+}
+
+.mis-publicaciones .delete img {
+    filter: brightness(0) invert(1);
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 4px;
+    height: 15px;
+    transform: translateY(-2px);
+}

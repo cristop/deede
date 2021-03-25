@@ -7,6 +7,21 @@
 <link rel="stylesheet" href="{{ 'assets/css/partials/depto.css'|theme }}" async>
 {% endput %}
 #}
+
+{%  set id = depto.id %}
+{% set id_user = depto.id_user %}
+{% set slug = depto.slug  %}
+{% set title = depto.nombre_depto  %}
+{% set precio = depto.precio %}
+{% set precio_viejo = depto.precio_viejo %}
+{% set comentario = depto.comentario %}
+{% set galeria = depto.galeria  %}
+{% set habitaciones = depto.habitaciones  %}
+{% set m2 = depto.m2  %}
+{% set orientacion = depto.orientacion  %}
+{% set edificio_ascensor = depto.edificio_ascensor  %}
+
+
 {% if example %}
 <div class="depto">
     <div class="imagen">
@@ -57,13 +72,13 @@
             {% endif %}
 
             {% if not galeria %}
-            <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': id  }) }}">
+            <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': slug  }) }}">
                 <img src="{{ 'assets/img/ejemplos/no-image.jpg'|theme }}" alt="">
             </a>
             {% endif %}
 
             {% for gal in galeria %}
-                <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': id  }) }}">
+                <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': slug  }) }}">
                     <img src="{{ gal.getThumb(200, 'auto') }}" alt="">
                 </a>
             {% endfor %}
@@ -71,10 +86,12 @@
         </div>
     </div>
     <div class="desc">
-        <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': id  }) }}" class="enlace"></a>
+        <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': slug  }) }}" class="enlace"></a>
+        {% if autor.getAvatarThumb(260) %}
         <div class="logo-empresa">
-            <img src="{{ 'assets/img/ejemplos/real-estate-logo-template_1156-724.jpg'|theme }}" alt="">
+            <img src="{{ autor.getAvatarThumb(260) }}" alt="">
         </div>
+        {% endif %}
         <div class="title">{% if title %}{{ title }}{% endif %}</div>
         <div class="precio"><b>{% if precio %}{{ precio }} €/mes{% endif %}</b> <span class="descuento">{% if precio_viejo %}{{ precio_viejo }} €{% endif %}</span></div>
         <div class="detalle">

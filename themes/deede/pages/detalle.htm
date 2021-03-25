@@ -9,7 +9,7 @@ robot_follow = "follow"
 [builderDetails]
 modelClass = "Deede\Deede\Models\Deptos"
 identifierValue = "{{ :slug }}"
-modelKeyColumn = "id"
+modelKeyColumn = "slug"
 displayColumn = "nombre_depto"
 notFoundMessage = "Record not found"
 ==
@@ -18,14 +18,11 @@ use Deede\Deede\Models\Deptos;
 
 function onStart(){
     $this['autor'] = Auth::findUserByid($this->param('id_user'));
-
 }
 ==
 {% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
-
-
 
 {% put scripts %}
 <script type="text/javascript" src="{{ 'assets/library/jquery.cycle2/jquery.cycle2.min.js'|theme }}"></script>

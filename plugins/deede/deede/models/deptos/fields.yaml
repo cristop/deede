@@ -3,8 +3,8 @@ fields:
         label: Operacion
         span: auto
         options:
-            'Alquiler': Alquiler
-            'Compra': Compra
+            Alquiler: Alquiler
+            Compra: Compra
         showSearch: true
         type: dropdown
     tipo_vivienda:
@@ -16,10 +16,21 @@ fields:
         span: auto
         default: 1
         type: checkbox
+    destacado:
+        label: Destacado
+        span: auto
+        type: checkbox
     nombre_depto:
         label: 'Nombre Depto'
-        span: full
+        span: left
         type: text
+    slug:
+        label: Slug
+        span: auto
+        type: text
+        preset:
+            field: nombre_depto
+            type: slug
     precio:
         label: Precio
         span: auto

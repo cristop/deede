@@ -57,6 +57,7 @@ function onSaveDepto(){
                 $depto->edificio_ascensor = post('edificio_ascensor');
                 $depto->id_user = post('id_user');
                 $depto->galeria = Input::file('galeria');
+                $depto->slug = post('slug');
                 $depto->save();
 
                 unset($_POST);
@@ -150,7 +151,16 @@ function onSaveDepto(){
                     <div class="flex">
                         <div>
                             <label>Nombre a mostrar</label>
-                            <input type="text" name="nombre_depto" required>
+                            <input type="text" name="nombre_depto" onkeyup="createSlug($(this).val())" required>
+                            <input type="hidden" name="slug" required>
+                            {% put scripts %}
+                            <script type="text/javascript">
+                                function createSlug(txt){
+                                    txt = txt.toLowerCase().replaceAll(" ", "-");
+                                    $('input[name="slug"]').val(txt);
+                                }                              
+                            </script>
+                            {% endput %}
                         </div>
                     </div>
 

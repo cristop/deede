@@ -11,9 +11,12 @@ columns:
         label: Operacion
         type: text
         searchable: true
-    tipo_vivienda:
+    tipo_vivienda_relacion:
         label: Tipo
         type: text
+        searchable: true
+        select: tipo
+        relation: tipo_vivienda_relacion
     published:
         label: Published
         type: text
@@ -26,3 +29,9 @@ columns:
         label: created_at
         type: datetime
         searchable: false
+    autor:
+        label: Creador
+        type: text
+        searchable: true
+        select: email
+        relation: autor

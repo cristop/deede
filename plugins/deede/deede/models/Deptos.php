@@ -30,7 +30,25 @@ class Deptos extends Model
         'galeria' => 'System\Models\File'
     ];
 
-    public function getTipoViviendaOptions() {
+    /*public $belongsToMany =[
+        'genres' =>[
+            'Watchlearn\Movies\Models\Genre',
+            'table' => 'watchlearn_movies_movies_genres',
+            'order' => 'genre_title'
+        ]
+    ];
+
+    public $belongsTo = [
+        'tipo_vivienda' => 'Deede\Deede\Models\Tipos_vivienda'
+    ];*/
+
+    public $belongsTo  = [
+        'tipo_vivienda_relacion' => ['Deede\Deede\Models\Tipos_vivienda', 'key' => 'tipo_vivienda'],
+        'autor' => ['RainLab\User\Models\User', 'key' => 'id_user']
+    ];
+
+
+    /*public function getTipoViviendaOptions() {
         $tipos = Tipos::orderBy('id','desc')->get();
         
         $return = array();
@@ -39,5 +57,5 @@ class Deptos extends Model
         }
         
         return $return;
-    }
+    }*/
 }

@@ -197,6 +197,7 @@ section.top {
 .detalle-section .tel {
     font-weight: 500;
     color: #444;
+    white-space: nowrap;
 }
 
 .detalle-section .tel:before {

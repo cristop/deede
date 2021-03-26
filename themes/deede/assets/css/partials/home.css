@@ -237,7 +237,7 @@
 
 .destacados {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
 }
 
@@ -273,7 +273,7 @@
 }
 
 .destacados .depto .imagen a {
-    height: 180px;
+    height: 214px;
 }
 
 /*Mobile*/

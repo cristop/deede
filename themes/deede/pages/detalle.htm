@@ -1,5 +1,5 @@
 title = "Detalle"
-url = "/detalle/:id_user?/:slug?"
+url = "/detalle/:slug?"
 layout = "default"
 meta_title = ""
 is_hidden = 0
@@ -12,13 +12,6 @@ identifierValue = "{{ :slug }}"
 modelKeyColumn = "slug"
 displayColumn = "nombre_depto"
 notFoundMessage = "Record not found"
-==
-use Auth;
-use Deede\Deede\Models\Deptos;
-
-function onStart(){
-    $this['autor'] = Auth::findUserByid($this->param('id_user'));
-}
 ==
 {% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
@@ -114,14 +107,24 @@ function onStart(){
                 <b class="subtitle">Publicado por:</b>
                 <table width="100%">
                     <tr>
-                        <td>{{ autor.name }}</td>
-                        {% if autor.phone %}<td align="right"><a href="#" class="tel">{{ autor.phone }}</a></td>{% endif %}
+                        {% if record.autor.company %}
+                            <td>{{ record.autor.company }}</td>
+                        {% else %}
+                            <td>{{ record.autor.name }}</td>
+                        {% endif %}
+
+                        {% if record.autor.phone %}
+                        <td align="right">
+                            <a href="#" class="tel">{{ record.autor.phone }}</a>
+                        </td>
+                        {% endif %}
+
                     </tr>
                 </table>
-                {% if autor.getAvatarThumb(260) %}
+                {% if record.autor.getAvatarThumb(260) %}
                 <div class="logo-empresa">
                     <a href="#">
-                        <img src="{{ autor.getAvatarThumb(260) }}" alt="">
+                        <img src="{{ record.autor.getAvatarThumb(260) }}" alt="">
                     </a>
                 </div>
                 {% endif %}

@@ -8,7 +8,7 @@
 {% endput %}
 #}
 
-{%  set id = depto.id %}
+{% set id = depto.id %}
 {% set id_user = depto.id_user %}
 {% set slug = depto.slug  %}
 {% set title = depto.nombre_depto  %}
@@ -20,7 +20,7 @@
 {% set m2 = depto.m2  %}
 {% set orientacion = depto.orientacion  %}
 {% set edificio_ascensor = depto.edificio_ascensor  %}
-
+{% set autor = depto.autor  %}
 
 {% if example %}
 <div class="depto">
@@ -72,13 +72,13 @@
             {% endif %}
 
             {% if not galeria %}
-            <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': slug  }) }}">
+            <a href="{{ 'detalle'|page({ 'slug': slug  }) }}">
                 <img src="{{ 'assets/img/ejemplos/no-image.jpg'|theme }}" alt="">
             </a>
             {% endif %}
 
             {% for gal in galeria %}
-                <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': slug  }) }}">
+                <a href="{{ 'detalle'|page({ 'slug': slug  }) }}">
                     <img src="{{ gal.getThumb(200, 'auto') }}" alt="">
                 </a>
             {% endfor %}
@@ -86,7 +86,7 @@
         </div>
     </div>
     <div class="desc">
-        <a href="{{ 'detalle'|page({ 'id_user': id_user, 'slug': slug  }) }}" class="enlace"></a>
+        <a href="{{ 'detalle'|page({ 'slug': slug  }) }}" class="enlace"></a>
         {% if autor.getAvatarThumb(260) %}
         <div class="logo-empresa">
             <img src="{{ autor.getAvatarThumb(260) }}" alt="">
@@ -107,9 +107,11 @@
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt non impedit sit tenetur doloribus! Adipisci, temporibus eaque molestias consectetur minima veniam corporis perspiciatis, voluptates assumenda ut facere impedit rem magnam.
             {% endif %}
         </div>
+        {% if autor.phone %}
         <div class="contacto">
-            <a href="#" class="tel">913 669 865</a>
+            <a href="#" class="tel">{{ autor.phone }}</a>
         </div>
+        {% endif %}
     </div>
 </div>
 {% endif %}

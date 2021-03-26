@@ -1,4 +1,10 @@
 fields:
+    autor:
+        label: Usuario
+        nameFrom: email
+        descriptionFrom: description
+        span: full
+        type: relation
     operacion:
         label: Operacion
         span: auto
@@ -7,10 +13,12 @@ fields:
             Compra: Compra
         showSearch: true
         type: dropdown
-    tipo_vivienda:
+    tipo_vivienda_relacion:
         label: 'Tipo vivienda'
+        nameFrom: tipo
+        descriptionFrom: description
         span: auto
-        type: dropdown
+        type: relation
     published:
         label: 'Publicar?'
         span: auto

@@ -184,12 +184,12 @@
 .depto .logo-empresa {
     position: absolute;
     right: 0;
-    bottom: -7px;
+    bottom: 0px;
     border: 1px solid #ddd;
 }
 
 .depto .logo-empresa img {
-    height: 53px;
+    /* height: 53px; */
     width: 110px;
     object-fit: cover;
 }
